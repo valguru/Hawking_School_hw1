@@ -1,0 +1,51 @@
+@mixin null-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin img($width) {
+  position: relative;
+  min-width: $width;
+  max-width: $width;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@mixin ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin flexbox($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin text($font-size, $font-weight, $font-family, $color) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  font-family: $font-family, sans-serif;
+  color: $color;
+}
+
+@mixin a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@mixin icon($image, $position, $size) {
+  width: $size;
+  height: $size;
+  background-image: url($image);
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+

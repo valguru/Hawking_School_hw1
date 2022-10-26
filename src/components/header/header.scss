@@ -1,1 +1,171 @@
+@import "../../styles/helpers/mixins";
+
+.header-container {
+  max-width: 1440px;
+}
+
+header {
+  white-space: nowrap;
+  margin: 0 auto;
+  padding: 20px 50px;
+  @include flexbox(row, normal, center);
+
+  .logo {
+    @include img(80px)
+  }
+
+  .menu-burger {
+    margin-left: 40px;
+    @include img(45px)
+  }
+
+  nav {
+    margin-left: 25px;
+
+    .main-menu {
+      @include ul;
+      @include flexbox(row, normal, normal);
+
+      & > *:not(:last-child) {
+        margin-right: 25px;
+      }
+
+      .menu-link {
+        position: relative;
+        text-transform: uppercase;
+        cursor: pointer;
+        @include text(inherit, 700, Montserrat, #4C858B);
+
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -3px;
+          width: 100%;
+          height: 1px;
+          background-color: #4C858B;
+          display: block;
+          opacity: 0;
+          transition: 0.3s all ease;
+        }
+
+        &:hover::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .additional-info {
+    margin-left: 70px;
+    @include flexbox(row, normal, center);
+
+    & > *:not(:last-child) {
+      margin-right: 50px;
+    }
+
+    .phone {
+      letter-spacing: 0.08em;
+      color: #4C858B;
+      @include a;
+
+      b {
+        color: #000;
+      }
+    }
+
+    .recall {
+      text-transform: uppercase;
+      border-bottom: 1px dashed;
+      line-height: 17px;
+      @include a;
+      @include text(12px, 700, inherit, #AE2236);
+    }
+
+    .social-networks {
+      margin-right: 40px;
+      @include flexbox(row, normal, center);
+
+      & > *:not(:last-child) {
+        margin-right: 8px;
+      }
+
+      .icon {
+        position: relative;
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        @include a;
+
+        & > * {
+          position: absolute;
+          left: 2px;
+        }
+      }
+
+      .vk {
+
+        @include icon("../../assets/images/vk-tg-inst-whtsp.png", 0 0, 15px);
+      }
+
+      .tg {
+        @include icon("../../assets/images/vk-tg-inst-whtsp.png", 0 -15px, 15px);
+      }
+
+      .inst {
+        @include icon("../../assets/images/vk-tg-inst-whtsp.png", 0 -33px, 15px);
+      }
+
+      .whtsp {
+        @include icon("../../assets/images/vk-tg-inst-whtsp.png", 0 -49px, 15px);
+      }
+
+    }
+
+    .interface {
+      & > *:not(:last-child) {
+        margin-right: 7px;
+      }
+
+      .icon {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        border: 1px solid #E5E5E5;
+        border-radius: 50%;
+        display: inline-block;
+        @include a;
+
+        & > * {
+          position: absolute;
+          top: 13px;
+          left: 13px;
+        }
+      }
+
+      .search {
+        @include icon("../../assets/images/search-like-cart.png", 0 -50px, 18px)
+      }
+
+      .like {
+        @include icon("../../assets/images/search-like-cart.png", 0 1px, 18px)
+      }
+
+      .cart {
+        @include icon("../../assets/images/search-like-cart.png", 0 -25px, 18px);
+
+        .in-cart {
+          padding: 3px;
+          background-color: #E33E54;
+          border-radius: 50%;
+          position: absolute;
+          top: -12px;
+          right: -16px;
+          @include text(9px, 700, Lato, #fff);
+        }
+      }
+    }
+  }
+}
+
 

@@ -7,3 +7,10 @@
 
 @import 'libs/libs';
 @import '../components/components';
+
+body {
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  color: #000;
+  @include null-margin-padding;
+}
